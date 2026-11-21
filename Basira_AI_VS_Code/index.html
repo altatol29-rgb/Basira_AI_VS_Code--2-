@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basira AI | Laboratory Insights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="brand" href="#home">
+            <span class="brand-icon">✦</span>
+            <span>Basira AI<small>Laboratory Insights</small></span>
+        </a>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#dashboard">Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- Main introduction -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">YOUR LAB RESULTS, MADE EASIER TO UNDERSTAND</p>
+            <h1>Understand your results.<br>Track changes over time.</h1>
+            <p class="hero-description">
+                Basira AI is a prototype platform that helps users follow
+                laboratory indicators and explore changes over time.
+            </p>
+            <a class="button" href="#dashboard">Explore the Dashboard</a>
+        </div>
+        <div class="hero-panel">
+            <div class="hero-name">Basira AI</div>
+            <h2>Turn lab numbers into clearer insights</h2>
+            <p>Organize results · Track trends · Visualize changes</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- About section -->
+        <section id="about" class="page-section">
+            <div class="section-heading">
+                <h2>About Basira AI</h2>
+                <p>The idea behind the project</p>
+            </div>
+            <div class="card">
+                <p>
+                    Basira AI is a system designed to analyze laboratory
+                    indicator results over time and identify patterns,
+                    trends, and changes using data analysis and artificial
+                    intelligence concepts.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section id="features" class="page-section">
+            <div class="section-heading">
+                <h2>Key Features</h2>
+                <p>Tools to organize and monitor laboratory results</p>
+            </div>
+            <div class="feature-grid">
+                <article class="card">
+                    <span class="feature-number">01</span>
+                    <h3>Time-Based Tracking</h3>
+                    <p>Follow repeated results for the same indicator by date.</p>
+                </article>
+                <article class="card">
+                    <span class="feature-number">02</span>
+                    <h3>Data Visualization</h3>
+                    <p>View numerical results in a simple line chart.</p>
+                </article>
+                <article class="card">
+                    <span class="feature-number">03</span>
+                    <h3>Trend Summary</h3>
+                    <p>See a descriptive comparison between recorded readings.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interactive dashboard -->
+        <section id="dashboard" class="page-section">
+            <div class="section-heading">
+                <h2>Laboratory Dashboard</h2>
+                <p>Add sample results to explore how the prototype works.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Add a Lab Result</h3>
+                    <form id="labForm">
+                        <label for="test">Indicator</label>
+                        <select id="test" required>
+                            <option value="Hemoglobin">Hemoglobin</option>
+                            <option value="Vitamin D">Vitamin D</option>
+                            <option value="Total Cholesterol">Total Cholesterol</option>
+                            <option value="HbA1c">HbA1c</option>
+                        </select>
+
+                        <label for="unit">Unit</label>
+                        <input id="unit" type="text" value="As shown in lab report" required>
+
+                        <label for="value">Result</label>
+                        <input id="value" type="number" step="any" placeholder="Example: 13.5" required>
+
+                        <label for="date">Test Date</label>
+                        <input id="date" type="date" required>
+
+                        <button class="button" type="submit">Add Result</button>
+                    </form>
+                    <p class="helper-text">
+                        Use sample data for demonstration. Units and reference
+                        ranges may vary between laboratories.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Trend Summary</h3>
+                    <div id="summary" class="empty-state">
+                        Add at least two results for the same indicator
+                        to view a trend summary.
+                    </div>
+                    <div class="notice">
+                        This is a numerical description only. It does not
+                        provide a medical diagnosis.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results table -->
+            <div class="card results-card">
+                <div class="table-heading">
+                    <h3>Results History</h3>
+                    <button id="clearBtn" class="button button-light" type="button">
+                        Clear History
+                    </button>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Indicator</th>
+                                <th>Result</th>
+                                <th>Unit</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                            <tr><td colspan="4" class="empty-cell">No results added yet.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="card chart-card">
+                <h3>Trend Chart</h3>
+                <label for="chartIndicator">Select an Indicator</label>
+                <select id="chartIndicator">
+                    <option value="Hemoglobin">Hemoglobin</option>
+                    <option value="Vitamin D">Vitamin D</option>
+                    <option value="Total Cholesterol">Total Cholesterol</option>
+                    <option value="HbA1c">HbA1c</option>
+                </select>
+                <div class="chart-container">
+                    <canvas id="trendChart" aria-label="Laboratory trend chart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Basira AI — Educational Prototype</p>
+        <p>This project is not a substitute for professional medical advice.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

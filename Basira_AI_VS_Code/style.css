@@ -1,0 +1,328 @@
+/* Basira AI - website styles */
+
+/* 1. Global colors and page defaults */
+:root {
+    --navy: #102b3f;
+    --teal: #19a89b;
+    --mint: #e9f7f4;
+    --ink: #203746;
+    --muted: #71838d;
+    --line: #e4ecef;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f5f8fa;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+/* 2. Header and navigation */
+.site-header {
+    background: var(--navy);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.brand small {
+    display: block;
+    color: #a9c6cf;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #24c7b4, #167e8c);
+    display: grid;
+    place-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #d9e8ed;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 3. Hero section */
+.hero {
+    padding: 65px 7%;
+    background: linear-gradient(115deg, #102b3f, #17485a 65%, #167f7b);
+    color: white;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: #8ce5d8;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.18;
+    margin: 12px 0;
+}
+
+.hero-description {
+    color: #d4e5e9;
+    margin-bottom: 25px;
+}
+
+.hero-panel {
+    padding: 25px;
+    border: 1px solid #ffffff40;
+    border-radius: 22px;
+    background: #ffffff12;
+}
+
+.hero-name {
+    color: #83e1d4;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+/* 4. Buttons */
+.button {
+    display: inline-block;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 20px;
+    background: var(--teal);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: brightness(1.06);
+}
+
+.button-light {
+    background: #eaf2f4;
+    color: #294554;
+}
+
+/* 5. Main content and cards */
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 22px;
+}
+
+.page-section {
+    margin: 38px 0;
+    scroll-margin-top: 20px;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-heading p,
+.helper-text {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 6px 22px #17384b08;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.feature-number {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--mint);
+    color: #087c70;
+    font-size: 12px;
+}
+
+/* 6. Dashboard and form */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+form {
+    display: grid;
+    gap: 9px;
+}
+
+label {
+    color: #526874;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #dce6e9;
+    border-radius: 10px;
+    background: white;
+    color: var(--ink);
+    font: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #a5e6dd;
+    border-color: var(--teal);
+}
+
+.helper-text {
+    font-size: 12px;
+}
+
+.notice {
+    margin-top: 14px;
+    padding: 15px;
+    border: 1px solid #d5efea;
+    border-radius: 14px;
+    background: #eff9f7;
+    font-size: 13px;
+}
+
+.empty-state,
+.empty-cell {
+    color: var(--muted);
+    text-align: center;
+    padding: 25px 10px;
+}
+
+/* 7. Results table */
+.results-card,
+.chart-card {
+    margin-top: 18px;
+}
+
+.table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    color: var(--muted);
+}
+
+/* 8. Chart */
+.chart-card select {
+    max-width: 300px;
+}
+
+.chart-container {
+    height: 240px;
+    margin-top: 15px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* 9. Footer */
+footer {
+    margin-top: 55px;
+    padding: 25px;
+    background: var(--navy);
+    color: #d4e5e9;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* 10. Responsive layout for phones and tablets */
+@media (max-width: 760px) {
+    .hero,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .site-header {
+        align-items: flex-start;
+    }
+}
